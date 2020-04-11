@@ -1,12 +1,14 @@
 # Branches
 
 -   master - current customized release version
--   ORB_SLAM2 - original version, but can compile successfully
+-   ORB\_SLAM2 - original version, but can compile successfully
 -   dev - current development version
 
 # Demo Videos
 
 [ORB SLAM2 学习](https://www.bilibili.com/video/BV15J4116768/)
+
+Check out to ORB\_SLAM2 branch if you follow the installation guide in this video.
 
 # Dependencies
 
@@ -56,7 +58,7 @@ export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:/root/catkin_ws/src/ORB_SLAM2/Exampl
 
 # Use docker
 
-## docker enviornment
+## Docker enviornment
 
 -   docker2
 -   Ubuntu 18.04
@@ -66,7 +68,7 @@ export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:/root/catkin_ws/src/ORB_SLAM2/Exampl
 -   Pangolin
 -   boost: 1.58
 
-## RUN Docker
+## Run from  docker
 
 ```sh
 xhost +local:root
@@ -86,9 +88,20 @@ E.g.,
 chown -R yubao:yubao *
 ```
 
+# Demo
+## Kinect2
+
+```sh
+roslaunch kinect2_bridge kinect2_bridge.launch publish_tf:=true
+
+roslaunch ORB_SLAM2 kinect2.lauch
+```
+
 # LOG
 - [x] Rename *.cc to *.cpp
 - [x] Move ROS folder up
-- [ ] Support Kinetic2 
+- [x] Support Kinetic2 
+- [ ] Publish TF for mapping or navigation
+- [ ] Add camera config topic which parameters are included
 
 
