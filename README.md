@@ -87,5 +87,8 @@ chown -R yubao:yubao *
 ```
 
 # LOG
-- Rename *.cc to *.cpp
+- [x] Rename *.cc to *.cpp
+- [x] Move ROS folder up
+- [ ] Support Kinetic2 
+
 
