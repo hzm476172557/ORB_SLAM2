@@ -13,5 +13,12 @@
     <node name="ORB_SLAM2" pkg="ORB_SLAM2" type="RGBD" args="$(arg PATH_TO_VOCABULARY) $(arg PATH_TO_SETTINGS_FILE)" output="screen">
         <remap from="/camera/rgb/image_raw" to="/kinect2/qhd/image_color_rect" />
         <remap from="/camera/depth_registered/image_raw" to="/kinect2/qhd/image_depth_rect" />
+
+        <param name="child_frame_id" value="camera_rgb_optical_frame" type="str" />
+
+        <!--
+        <param name="child_frame_id" value="kinect2_link" type="str" />
+        <param name="odom_frame_id"  value="odom" type="str" />
+        -->
     </node>
 </launch>

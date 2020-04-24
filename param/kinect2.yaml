@@ -10,10 +10,10 @@
 # Camera.cx: 473.80541695901104
 # Camera.cy: 275.249658856064
 
-Camera.fx: 517.306408
-Camera.fy: 516.469215
-Camera.cx: 318.643040
-Camera.cy: 255.313989
+Camera.fx: 540.686
+Camera.fy: 540.686
+Camera.cx: 479.75
+Camera.cy: 269.75
 
 # Camera.k1: -0.03603598486102012
 # Camera.k2: 0.41732302713350355
