@@ -1,6 +1,6 @@
 echo "Building ROS nodes"
 
-cd Examples/ROS/ORB_SLAM2
+cd ROS/ORB_SLAM2
 rm -rf build
 mkdir build
 cd build

@@ -1,3 +1,7 @@
+CameraTrajectory.txt 
+KeyFrameTrajectory.txt
+
+
 CMakeLists.txt.user
 Examples/Monocular/mono_euroc
 Examples/Monocular/mono_kitti

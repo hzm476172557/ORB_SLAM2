@@ -3,10 +3,10 @@ include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
 
 rosbuild_init()
 
+SET(ROS_BUILD_TYPE Debug)
 IF(NOT ROS_BUILD_TYPE)
   SET(ROS_BUILD_TYPE Release)
 ENDIF()
-
 MESSAGE("Build type: " ${ROS_BUILD_TYPE})
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}  -Wall  -O3 -march=native ")
@@ -28,7 +28,7 @@ else()
    message(FATAL_ERROR "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
-LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../../../cmake_modules)
+LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../../cmake_modules)
 
 find_package(OpenCV 3.0 QUIET)
 if(NOT OpenCV_FOUND)
@@ -44,8 +44,8 @@ find_package(Boost COMPONENTS system)
 
 include_directories(
 ${PROJECT_SOURCE_DIR}
-${PROJECT_SOURCE_DIR}/../../../
-${PROJECT_SOURCE_DIR}/../../../include
+${PROJECT_SOURCE_DIR}/../../
+${PROJECT_SOURCE_DIR}/../../include
 ${Pangolin_INCLUDE_DIRS}
 ${Boost_INCLUDE_DIRS}
 )
@@ -54,15 +54,15 @@ set(LIBS
 ${OpenCV_LIBS} 
 ${EIGEN3_LIBS}
 ${Pangolin_LIBRARIES}
-${PROJECT_SOURCE_DIR}/../../../Thirdparty/DBoW2/lib/libDBoW2.so
-${PROJECT_SOURCE_DIR}/../../../Thirdparty/g2o/lib/libg2o.so
-${PROJECT_SOURCE_DIR}/../../../lib/libORB_SLAM2.so
+${PROJECT_SOURCE_DIR}/../../Thirdparty/DBoW2/lib/libDBoW2.so
+${PROJECT_SOURCE_DIR}/../../Thirdparty/g2o/lib/libg2o.so
+${PROJECT_SOURCE_DIR}/../../lib/libORB_SLAM2.so
 -lboost_system
 )
 
 # Node for monocular camera
 rosbuild_add_executable(Mono
-src/ros_mono.cc
+src/ros_mono.cpp
 )
 
 target_link_libraries(Mono
@@ -71,9 +71,9 @@ ${LIBS}
 
 # Node for monocular camera (Augmented Reality Demo)
 rosbuild_add_executable(MonoAR
-src/AR/ros_mono_ar.cc
+src/AR/ros_mono_ar.cpp
 src/AR/ViewerAR.h
-src/AR/ViewerAR.cc
+src/AR/ViewerAR.cpp
 )
 
 target_link_libraries(MonoAR
@@ -82,7 +82,7 @@ ${LIBS}
 
 # Node for stereo camera
 rosbuild_add_executable(Stereo
-src/ros_stereo.cc
+src/ros_stereo.cpp
 )
 
 target_link_libraries(Stereo
@@ -91,7 +91,7 @@ ${LIBS}
 
 # Node for RGB-D camera
 rosbuild_add_executable(RGBD
-src/ros_rgbd.cc
+src/ros_rgbd.cpp
 )
 
 target_link_libraries(RGBD
