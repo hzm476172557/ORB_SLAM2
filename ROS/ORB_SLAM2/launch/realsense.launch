@@ -1,0 +1,18 @@
+<launch>
+    <param name="use_sim_time" value="false" />
+
+    <arg name="PATH_TO_VOCABULARY" value="$(find ORB_SLAM2)/../../Vocabulary/ORBvoc.txt" />
+    <arg name="PATH_TO_SETTINGS_FILE" value="$(find ORB_SLAM2)/../../param/realsense.yaml" />
+
+    <node name="ORB_SLAM2" pkg="ORB_SLAM2" type="RGBD" args="$(arg PATH_TO_VOCABULARY) $(arg PATH_TO_SETTINGS_FILE)" output="screen">
+        <remap from="/camera/rgb/image_raw" to="/camera/color/image_raw" />
+        <remap from="/camera/depth_registered/image_raw" to="/camera/aligned_depth_to_color/image_raw" />
+
+        <param name="child_frame_id" value="camera_color_optical_frame" type="str" />
+
+        <!--
+        <param name="child_frame_id" value="kinect2_link" type="str" />
+        <param name="odom_frame_id"  value="odom" type="str" />
+        -->
+    </node>
+</launch>

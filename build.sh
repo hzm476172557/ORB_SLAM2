@@ -5,7 +5,7 @@ rm -rf build
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j
+make -j3
 
 echo "======================================="
 cd ../../g2o
@@ -14,7 +14,7 @@ rm -rf build
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j
+make -j3
 
 cd ../../../
 echo "======================================="
@@ -29,4 +29,4 @@ rm -rf build
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j
+make -j3

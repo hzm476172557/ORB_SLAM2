@@ -101,6 +101,7 @@ roslaunch ORB_SLAM2 kinect2.lauch
 - [x] Rename *.cc to *.cpp
 - [x] Move ROS folder up
 - [x] Support Kinetic2 
+- [x] Support Realsense
 - [ ] Publish TF for mapping or navigation
 - [ ] Add camera config topic which parameters are included
 
