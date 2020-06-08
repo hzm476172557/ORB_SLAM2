@@ -9,10 +9,6 @@
         <remap from="/camera/depth_registered/image_raw" to="/camera/aligned_depth_to_color/image_raw" />
 
         <param name="child_frame_id" value="camera_color_optical_frame" type="str" />
-
-        <!--
-        <param name="child_frame_id" value="kinect2_link" type="str" />
         <param name="odom_frame_id"  value="odom" type="str" />
-        -->
     </node>
 </launch>

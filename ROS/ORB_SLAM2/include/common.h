@@ -62,7 +62,7 @@ void publish_tf(const cv::Mat& t_Tcw, const ros::Time& t_stamp,
 
     cv::Mat Rcw = t_Tcw.rowRange(0, 3).colRange(0, 3);
     cv::Mat tcw = t_Tcw.rowRange(0, 3).col(3);
-    cv::Mat Rwc = Rcw.t(); // world to camera
+    cv::Mat Rwc = Rcw.t(); 
     cv::Mat twc = -Rwc * tcw;
 
     vector<float> q = toQuaternion(Rwc);
