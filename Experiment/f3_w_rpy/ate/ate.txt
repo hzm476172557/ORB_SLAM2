@@ -1,0 +1,9 @@
+evaluate_ate.py --plot ate.png --verbose --save_associations ate_associate.txt ../rgbd_dataset_freiburg3_walking_rpy-groundtruth.txt ../KeyFrameTrajectory.txt
+compared_pose_pairs 388 pairs
+absolute_translational_error.rmse 1.085461 m
+absolute_translational_error.mean 0.970126 m
+absolute_translational_error.median 1.135803 m
+absolute_translational_error.std 0.486909 m
+absolute_translational_error.min 0.047486 m
+absolute_translational_error.max 1.905858 m
+

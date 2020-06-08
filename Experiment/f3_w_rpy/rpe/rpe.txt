@@ -1,0 +1,16 @@
+evaluate_rpe.py --fixed_delta --plot rpe.png --save rpe.txt --verbose ../rgbd_dataset_freiburg3_walking_rpy-groundtruth.txt ../KeyFrameTrajectory.txt
+compared_pose_pairs 364 pairs
+translational_error.rmse 0.385744 m
+translational_error.mean 0.290880 m
+translational_error.median 0.203410 m
+translational_error.std 0.253352 m
+translational_error.min 0.000000 m
+translational_error.max 1.024328 m
+rotational_error.rmse 7.523788 deg
+rotational_error.mean 5.614611 deg
+rotational_error.median 0.064197 deg
+rotational_error.std 5.008347 deg
+rotational_error.min 0.000000 deg
+rotational_error.max 19.987115 deg
+
+

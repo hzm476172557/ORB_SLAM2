@@ -7,15 +7,11 @@ services:
         args:
             cuda_version: 10.2
             cudnn_version: 7
-            ubuntu_version: 18
+            ubuntu_version: 18.04
     container_name: orbslam2
     runtime: nvidia
-    stdin_open: true
-    tty: true
-    command: 
-        - roscore
-        # - bash
-        # - lxterminal
+    command: >
+        - lxterminal
     environment:
         - ROS_HOSTNAME=orbslam2
         - ROS_MASTER_URI=http://orbslam2:11311
@@ -26,7 +22,6 @@ services:
         - ../:/root/catkin_ws/src/ORB_SLAM2
         - /home/yubao/data/Dataset:/root/Dataset
         - orbslam2:/root
-    entrypoint: /ros_entrypoint.sh
 
 volumes:
     orbslam2:
